@@ -38,21 +38,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
 .urgency-bar .sep{opacity:.3}
 
 .btn-header{
-  display:inline-block;
-  background:white;
-  color:var(--accent);
+  display:inline-block !important;
+  background:linear-gradient(180deg,#FF8C00 0%,#E55A00 100%) !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
   font-family:'DM Sans',sans-serif;
-  font-size:12.5px;font-weight:700;
+  font-size:12.5px;font-weight:700 !important;
   padding:8px 20px;
   border-radius:4px;
-  border:2px solid var(--accent);
-  text-decoration:none;
+  border:none !important;
+  text-decoration:none !important;
   white-space:nowrap;
   transition:all .18s;
-  box-shadow:0 3px 10px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.9);
+  box-shadow:0 4px 14px rgba(229,90,0,.45),0 1px 3px rgba(229,90,0,.3),inset 0 1px 0 rgba(255,210,100,.5) !important;
   letter-spacing:0.2px;
 }
-.btn-header:hover{background:#FFF5E0;transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.9)}
+.btn-header:hover,.btn-header:focus,.btn-header:active,.btn-header:visited,.btn-header:link{
+  background:linear-gradient(180deg,#FFA020 0%,#FF6010 100%) !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  text-decoration:none !important;
+  transform:translateY(-1px);
+  box-shadow:0 6px 20px rgba(229,90,0,.55),inset 0 1px 0 rgba(255,210,100,.5) !important;
+}
 
 /* ---- HERO ---- */
 .hero{
@@ -90,53 +98,66 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
 .price-save-badge{background:#D94F4F;color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
 .price-kopi-note{font-size:13px;color:var(--stone-600);background:var(--gold-light);border:1px solid rgba(184,134,11,.22);padding:5px 14px;border-radius:20px}
 
-/* ---- CTA BUTTON — white bg, brown outline ---- */
+/* ---- CTA BUTTON — Orange menyala, teks putih ---- */
 .btn-cta{
-  display:inline-block;
-  background:white;
-  color:var(--accent);
+  display:inline-block !important;
+  background:linear-gradient(180deg,#FF8C00 0%,#E55A00 100%) !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
   font-family:'DM Sans',sans-serif;
-  font-size:16px;font-weight:700;
+  font-size:16px;font-weight:700 !important;
   padding:18px 40px;
   border-radius:5px;
-  border:2px solid var(--accent);
-  text-decoration:none;
+  border:none !important;
+  outline:none !important;
+  text-decoration:none !important;
   letter-spacing:.2px;
   transition:all .2s ease;
-  box-shadow:0 4px 16px rgba(139,69,19,.22), 0 1px 3px rgba(139,69,19,.15), inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow:
+    0 5px 18px rgba(229,90,0,.45),
+    0 2px 6px rgba(229,90,0,.3),
+    inset 0 1px 0 rgba(255,210,100,.55),
+    inset 0 -2px 0 rgba(0,0,0,.12) !important;
   position:relative;overflow:hidden;
 }
 .btn-cta::before{
-  content:'';
-  position:absolute;top:0;left:0;right:0;
-  height:50%;
-  background:linear-gradient(180deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 100%);
-  border-radius:3px 3px 0 0;
-  pointer-events:none;
+  content:'';position:absolute;top:0;left:0;right:0;height:48%;
+  background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 100%);
+  border-radius:4px 4px 0 0;pointer-events:none;z-index:1;
 }
 .btn-cta::after{
-  content:'';
-  position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(139,69,19,.06),transparent);
-  transition:left .5s;
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  transition:left .5s;z-index:1;
 }
-.btn-cta:hover{
-  background:#FFF8F2;
-  color:var(--accent-warm);
-  border-color:var(--accent-warm);
+.btn-cta:hover,.btn-cta:focus,.btn-cta:active{
+  background:linear-gradient(180deg,#FFA020 0%,#FF6010 100%) !important;
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  text-decoration:none !important;
   transform:translateY(-2px);
-  box-shadow:0 8px 28px rgba(139,69,19,.28), 0 2px 6px rgba(139,69,19,.15), inset 0 1px 0 rgba(255,255,255,1);
+  box-shadow:
+    0 8px 28px rgba(229,90,0,.55),
+    0 3px 8px rgba(229,90,0,.3),
+    inset 0 1px 0 rgba(255,210,100,.55),
+    inset 0 -2px 0 rgba(0,0,0,.12) !important;
 }
+.btn-cta:visited,.btn-cta:link{color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-decoration:none !important;}
 .btn-cta:hover::after{left:100%}
+.btn-cta *{color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-decoration:none !important;}
 .btn-cta.large{font-size:17px;padding:20px 48px}
-.btn-cta.full{display:block;text-align:center}
+.btn-cta.full{display:block !important;text-align:center}
 .btn-cta.gold-btn{
-  background:white;
-  color:var(--gold);
-  border-color:var(--gold);
-  box-shadow:0 4px 16px rgba(184,134,11,.22), 0 1px 3px rgba(184,134,11,.15), inset 0 1px 0 rgba(255,255,255,1);
+  background:linear-gradient(180deg,#FF8C00 0%,#E55A00 100%) !important;
+  color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;
+  border:none !important;
+  box-shadow:0 5px 18px rgba(229,90,0,.45),0 2px 6px rgba(229,90,0,.3),inset 0 1px 0 rgba(255,210,100,.55) !important;
 }
-.btn-cta.gold-btn:hover{background:#FFFBF0;color:#C8960D;border-color:#C8960D;box-shadow:0 8px 28px rgba(184,134,11,.28), inset 0 1px 0 rgba(255,255,255,1);}
+.btn-cta.gold-btn:hover{
+  background:linear-gradient(180deg,#FFA020 0%,#FF6010 100%) !important;
+  color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;
+  box-shadow:0 8px 28px rgba(229,90,0,.55),inset 0 1px 0 rgba(255,210,100,.55) !important;
+}
 
 .cta-micro{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px;flex-wrap:wrap}
 .cta-micro span{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--stone-600)}
@@ -340,9 +361,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
 .hero h1{animation-delay:.15s}
 .hero .hero-subtitle{animation-delay:.22s}
 .hero .hero-cover-wrap{animation-delay:.3s}
-.hero .price-block{animation-delay:.38s}
-.hero .btn-cta{animation-delay:.44s}
-.hero .cta-micro{animation-delay:.5s}
+.hero .btn-cta{animation-delay:.38s}
+.hero .cta-micro{animation-delay:.44s}
+</style>
+<style>
+/* === ANTI-SCALEV: Kunci warna teks tombol tetap putih === */
+a.btn-cta,a.btn-cta:link,a.btn-cta:visited,a.btn-cta:hover,a.btn-cta:active,a.btn-cta:focus,
+a.btn-header,a.btn-header:link,a.btn-header:visited,a.btn-header:hover,a.btn-header:active,a.btn-header:focus{
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+  text-decoration:none !important;
+}
 </style>
 </head>
 <body>
@@ -385,19 +414,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
       >
     </div>
 
-    <!-- Price psychology -->
-    <div class="price-block">
-      <div class="price-anchor-label">Investasi terbaik sebelum menikah</div>
-      <div class="price-row">
-        <span class="price-original">Rp199.000</span>
-        <span class="price-main">Rp49.000</span>
-        <span class="price-save-badge">Hemat 75%</span>
-      </div>
-      <span class="price-kopi-note">☕ Seharga kopi — manfaatnya seumur hidup</span>
-    </div>
+    <!-- Price disembunyikan di hero - muncul di pricing section -->
 
     <a href="https://lynk.id/aditamainiproses/p8o4dxn7ro8l/checkout?token=cGFyYW1zPSU1QiU1RCZiaWRfcHJpY2U9MCZxdHlfcHJvZD0xJnNlc3NpZD0mdG90YWxfcHJpY2U9JnRvdGFsX3VuaXQ9" class="btn-cta large">
-      👉 Ya, Saya Mau Ebook Ini Sekarang
+      👉 Ya, Saya Ingin Panduannya
     </a>
 
     <div class="cta-micro">
@@ -652,7 +672,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
     <div class="testi-grid">
       <div class="testi-card"><div class="stars">★★★★★</div><div class="quote">"Biasanya kalau ngobrol serius sering muter-muter. Dengan ebook ini, obrolannya jadi lebih terarah dan membantu membuka pembahasan yang selama ini kami hindari."</div><div class="name">Ardi, 28 Tahun</div></div>
       <div class="testi-card"><div class="stars">★★★★★</div><div class="quote">"Ada beberapa pertanyaan yang cukup dalam. Awalnya canggung, tapi dari situ kami bisa lebih jujur satu sama lain. Hubungan kami sekarang jauh lebih terbuka."</div><div class="name">Nadia, 26 Tahun</div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><div class="quote">"Dengan harga Rp49.000, ini sangat worth it. Bonusnya membantu banget — terutama Akses Coaching-nya. Bisa langsung ngobrol sama Mas Aditama kalau butuh arahan."</div><div class="name">Raka, 29 Tahun</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><div class="quote">"Dengan harga Rp49.000, ini sangat worth it. Bonusnya membantu banget — terutama Akses Coaching-nya. Bisa langsung ngobrol sama Mas Aditama kalau butuh arahan."</div><div class="name">Ilham, 30 Tahun</div></div>
     </div>
   </div>
 </section>
@@ -666,7 +686,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
     <div class="author-card">
       <div class="author-avatar"><img src="https://res.cloudinary.com/ddsvzaasl/image/upload/v1776003668/WhatsApp_Image_2026-04-12_at_21.20.32_exd3bg.jpg" alt="Foto Mas Aditama"></div>
       <div class="author-body">
-        <div class="author-name">Aditama</div>
+        <div class="author-name">Mas Aditama</div>
         <div class="author-title">Konsultan Pernikahan &amp; Edukator Pranikah</div>
         <div class="author-bio">Aktif sebagai konsultan pernikahan dengan latar belakang Bimbingan dan Konseling Islam. Telah membantu ratusan pasangan mempersiapkan diri sebelum menikah melalui pendekatan komunikasi yang jujur, empatik, dan berbasis nilai. Ebook ini lahir dari pengalaman nyata mendampingi pasangan — bukan sekadar teori.</div>
       </div>
@@ -741,7 +761,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
       </div>
 
       <a href="https://lynk.id/aditamainiproses/p8o4dxn7ro8l/checkout?token=cGFyYW1zPSU1QiU1RCZiaWRfcHJpY2U9MCZxdHlfcHJvZD0xJnNlc3NpZD0mdG90YWxfcHJpY2U9JnRvdGFsX3VuaXQ9" class="btn-cta full large">
-        👉 Dapatkan Akses Sekarang — Rp49.000
+        👉 Dapatkan Akses Sekarang
       </a>
       <div class="cta-micro" style="margin-top:12px;justify-content:center">
         <span><span class="check">✓</span> Langsung dapat akses</span>
@@ -821,7 +841,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--c
 =========================== -->
 <div class="sticky-cta">
   <a href="https://lynk.id/aditamainiproses/p8o4dxn7ro8l/checkout?token=cGFyYW1zPSU1QiU1RCZiaWRfcHJpY2U9MCZxdHlfcHJvZD0xJnNlc3NpZD0mdG90YWxfcHJpY2U9JnRvdGFsX3VuaXQ9" class="btn-cta full">
-    👉 Dapatkan Ebook Sekarang — Rp49.000
+    👉 Dapatkan Ebook Sekarang
   </a>
 </div>
 
